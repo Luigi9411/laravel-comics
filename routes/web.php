@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    $comics = config('comics');
     return view('guest.characters', [
         'menu'   => config('menu'),
+        'comics' => $comics,
     ]);
 })->name('characters');
 
